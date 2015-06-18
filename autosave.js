@@ -81,7 +81,7 @@
                 data: data,
                 method: method,
                 success: function(a,b,c){success($input, b);},
-                error: function(a,b,c){if(b!='abort'){markBad($input);}}
+                error: function(a,b,c){error($input, a,b,c);}
             });
 
             $input.data('save_request', save_request);
@@ -92,6 +92,14 @@
             if(response == 'success'){
                 markGood($input);
                 $input.data('last_good', $input.val());
+            }
+
+        }
+
+        function error($input, response,b,c){
+
+            if(b!='abort'){
+                markBad($input);
             }
 
         }
