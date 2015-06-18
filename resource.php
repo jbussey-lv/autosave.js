@@ -1,1 +1,3 @@
-ok
+<?php
+header('Location: resource2');
+?>
